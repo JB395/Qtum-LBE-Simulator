@@ -1,0 +1,28 @@
+Python 3.6.3 (v3.6.3:2c5fed8, Oct  3 2017, 18:11:49) [MSC v.1900 64 bit (AMD64)] on win32
+Type "copyright", "credits" or "license()" for more information.
+>>> 
+ RESTART: C:/Users/jbelove/Desktop/Work 02-12/Qtum LBE Simulator 02-15-2018.py 
+Qtum LBE Simulator, version 02-15-2018
+did loadMainnetWallets()
+enableLogging = True
+printBlockByBlock = False
+logBlockByBlock = False
+Using Python secrets module for cryptographically strong random numbers
+useRetarget = True, retarget on every block
+useNormalDistributionForOffset = False, use fixed block times at the start of the 16 second steps
+Loading wallets with Mainnet distribuition
+secondSHA256 = False, do not make 2nd SHA-256 check
+useDynamicWeights = No, keep wallet weights constant during the simulation run
+Log file name = QLBES_Log_15_Feb_2018.csv
+Wallets 1500 blocks 2000 startingBlock 0 targetMultiplier 832
+Running simulation - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+  Run | target mplr | ave secs | >=640 blks | max secs | collisns | num2bites
+    0 |  15,000.000 |   129.11 |         11 |    1,104 |      131 | 0
+    1 |  20,000.000 |   128.51 |         11 |      832 |      152 | 0
+    2 |  25,000.000 |   128.19 |         13 |      944 |      144 | 0
+    3 |  30,000.000 |   128.39 |          6 |    1,024 |      138 | 0
+    4 |  35,000.000 |   127.79 |          9 |      944 |      129 | 0
+Simulation duration in seconds: 684.40
+ending target 5.492029881727879e+60 ending difficulty 4908749.693750441
+true network weight 25000000 ending new network weight 24714000.0
+>>> 
