@@ -162,15 +162,16 @@ startingStep = 16
    Uses parameters as described below. Network weight will grow by
    walletGrowthNumWallets * walletGrowthWeight * walletGrowthNumIncrements 
    with total wallet growth given by walletGrowthNumWallets * walletGrowthNumIncrements
-   
-   Th
-   
-   
 
 useWalletGrowth = False            # set to cause the number of wallets to grow during the simulation run
+
 walletGrowthStartBlock = 1000      # block to start wallet growth
+
 walletGrowthBlockIncrement = 500   # spacing between blocks of wallet growth
+
 walletGrowthNumWallets = 5000      # number of wallets to grow in each increment
+
 walletGrowthNumIncrements = 10     # number of times to grow wallets
+
 walletGrowthWeight = 500           # weight of each new wallet
 
