@@ -1,6 +1,6 @@
 # Qtum-LBE-Simulator
 
-A Qtum wallet simulator to explore target adjustment and block spacing
+## A Qtum wallet simulator to explore target adjustment and block spacing
 
 Qtum LBE Simulator (LBE = Long Block Eradicator) a program to use the SHA-256
 hash function and algorithms from qtum mainnet
@@ -39,8 +39,51 @@ network weight calculation derived from the target, which is literally a
 "moving target".
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+```
+Program Summary
+    set switches & parameters for simuation complexity
+    if doing replay, read file for spacing and difficulty
+    initialize log file
+    set starting target, based on network weight
+    load the wallets: uniform, random, mainnet, testnet
+    parameter loop - - - - - - - - - - - - - - - - - - - - - -
+   /
+   |   initialize variables for a single run 
+   |
+   |    block loop - - - - - - - - - - - - - - - - - - - - - -
+   |   /
+   |   |   adjust wallet weight or number of wallets, if desired
+   |   |  
+   |   |    step loop - - - - - - - - - - - - - - - - - - - -
+   |   |   /
+   |   |   |    target scaling after XX steps, if configured
+   |   |   |
+   |   |   |    wallet loop - - - - - - - - - - - - - - - - -
+   |   |   |   /
+   |   |   |   |    if doing simulation
+   |   |   |   |        if target < SHA256 hash of random variable * wallet weight
+   |   |   |   |            block reward
+   |   |   |   |
+   |   |   |   |        else if long steps can configure for 2nd check for target < SHA256
+   |   |   |   |            
+   |   |   |   |        (loop through all wallets, check for collisions)
+   |   |   |   |
+   |   |   |   |    else doing replay
+   |   |   |   |        use block spacing and difficulty from file
+   |   |   |   \_
+   |   |   |  
+   |   |   |    adjust the target based on target multiplier and previous spacing
+   |   |   |    print and log (if desired)   
+   |   |   \_
+   |   \_
+   |
+   |     print and log results for a run
+   |     increment paramValue for next run
+   \_
+```
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 
-Simulation Complexity
+## Simulation Complexity
 
 The simulator may be set to run with different levels of complexity, from
 simple fixed default parameters, then adding various improvements, adding 
